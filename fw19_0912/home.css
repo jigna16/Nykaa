@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#SP~header{
+    width: 100%;
+    background-color: white;
+}
+#Container_SP{
+    width: 1000px;
+    /* height: 50px; */
+    margin: auto;
+    display: flex;
+/* justify-content: space-between; */
+}
+nav ul{
+    display: flex;
+    /* text-decoration: none; */
+}
+nav ul li{
+    color: gray;
+    padding: 30px 20px;
+    list-style: none;
+    cursor: pointer;
+
+}
