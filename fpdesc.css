@@ -1,0 +1,45 @@
+* {
+    margin-top: 50px;
+}
+#fshow_product {
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    height: 450px;
+    display: flex;
+}
+#fmulti_images {
+    margin: 0px;
+    width: 10%;
+    border: 1px solid red;
+}
+#fmulti_images > img {
+    border: 1px solid blue;
+    display: block;
+    margin-top: 15px;
+    height: 70px;
+}
+#fproduct_image {
+    margin: 0px;
+    width: 35%;
+    border: 1px solid blue;
+}
+#fproduct_image > img {
+    width: 90%;
+}
+#fproduct_desc {
+    margin: 0px;
+    width: 55%;
+    border: 1px solid green;
+}
+#fproduct_desc > button {
+    display: block;
+    margin: auto;
+    background-color: #FC2779;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 25px 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
