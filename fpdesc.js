@@ -1,4 +1,5 @@
 let addToCart = JSON.parse(localStorage.getItem("facePrimer")) || [];
+let showDescription = JSON.parse(localStorage.getItem("showDesc")) || [];
 let container = document.querySelector("#fshow_product");
 
 function showDetails (data) {
@@ -41,10 +42,11 @@ function showDetails (data) {
         name.innerText = el.name;
 
         let price = document.createElement("h2");
-        price.innerText = `MRP ₹ ${el.price}`;
+        price.innerText = `MRP: ₹ ${el.price}`;
+        price.setAttribute("id", "fprice");
 
         let rating = document.createElement("p");
-        rating.innerText = `Rating: ${el.rating} /5`;
+        rating.innerText = `Rating: ${el.rating} / 5`;
 
         let button = document.createElement("button");
         button.innerText = "Add to Bag";
@@ -53,9 +55,9 @@ function showDetails (data) {
             localStorage.setItem("facePrimer", JSON.stringify(addToCart));
         });
 
-        product_desc.append(name,price,rating,button);
+        product_desc.append(name,rating,price,button);
 
         container.append(multi_images,product_image,product_desc);
     });
 }
-showDetails(addToCart);
+showDetails(showDescription);
