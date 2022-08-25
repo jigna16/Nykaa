@@ -1,0 +1,91 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+h4 {
+    color: grey;
+    margin-top: 50px;
+}
+h2 {
+    text-align: center;
+}
+#fslider {
+    width: 100%;
+    position: relative;
+    /* border: 1px solid red; */
+    margin-bottom: 50px;
+}
+#fslider > img {
+    width: 100%;
+}
+#fslider > button {
+    position: absolute;
+    top: 40%;
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#fslider > button:nth-child(2) {
+    left: 1%;
+}
+#fslider > button:nth-child(3) {
+    right: 1%;
+}
+#fslider > button:hover {
+    background-color: rgba(77,77,77,0.8);
+}
+/* product_part stats */
+#fproduct_part {
+    margin-top: 50px;
+    display: flex;
+}
+#fsidebar {
+    width: 20%;
+    height: 500px;
+    border: 1px solid green;
+}
+#fproducts {
+    width: 70%;
+    margin: 0px 20px 0px 70px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+#fproducts > div {
+    border: 1px solid red;
+}
+#fproducts > div > img {
+    width: 70%;
+    height: 200px;
+    padding: 0px 30px 20px 30px;
+}
+#fproducts > div > p:first-child {
+    color: #FC2779;
+}
+#fproducts > div > h4,h3,p {
+    text-align: center;
+}
+#fproducts > div > h4 {
+    line-height: 20px;
+    margin: 0px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+#fproducts > div > button {
+    display: block;
+    margin: auto;
+    padding: 15px 40px;
+    background-color: #FC2779;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
