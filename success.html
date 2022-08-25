@@ -74,7 +74,7 @@
     }
 
     #j_otp{
-        margin-top: 50px;
+        margin-top: 10px;
         display: flex;
     }
 
@@ -94,12 +94,14 @@
         padding: 11px 13px 11px 13px;
         width: 210px;
         margin-left: 60px;
-        border:1px solid lightgrey
+        font-size: 40px;
+        /* border: 1px solid white; */
+        
     }
 
 
     #verifyBox{
-        margin-top: 80px;
+        margin-top: 30px;
         padding: 11px 13px 11px 13px;
         width: 210px;
         margin-left: 60px;
@@ -122,12 +124,24 @@
         color: lightgrey;
         /* border: 1px solid red; */
         width: 150px;
-        margin-top: 5px;
+        margin-top: 10px;
         font-size: large;
     }
 
     #cross{
             cursor: pointer;
+        }
+
+
+        #timer{
+            border: 1px solid red;
+            width: 80px;
+            height: 30px;
+            margin-top: 25px;
+            margin-left: 200px;
+            font-size: large;
+          
+
         }
 
 
@@ -144,13 +158,13 @@
         <div id="j_para2">your phone</div>
         <div id="j_para3">(Be sure to check your spam folder)</div>
 
-
+        <div id="timer"> </div>
         <div id="j_otp">
             <input type="text" name="" id="otp" placeholder="Enter OTP">
             <button id="submit">RESEND OTP</button>
         </div>
          <div id="verifyBox">
-            <div>VERIFY</div>
+            <div id="verify">VERIFY</div>
          </div>
 
          <div id="j_last">Login via Password</div>
@@ -166,21 +180,46 @@
   let arr=JSON.parse(localStorage.getItem("number"))
     console.log(arr[0])
 
-    // let a=[1,2,3,4,5]
-    
-    // console.log(arr[1])
-
-
-    let myFun=()=>{
     let input=document.getElementById("input")
     input.value=arr[0]
-    console.log(input)
+
+
+    document.getElementById("cross").addEventListener("click",()=>{
+    window.location.href="verify.html"
+   })
+
+ 
+
+    let id;
+    let c=30;
+
+    let myFun=()=>{
+    let  y=document.getElementById("otp").value
+
+     document.getElementById("timer").innerText=` 00: ${c} sec`
+     c--
+     console.log(y)
+     if(y.length=="6"){
+        document.getElementById("verifyBox").style.backgroundColor="#fc2779"
+         document.getElementById("verify").style.backgroundColor="#fc2779"
+         clearTimeout(id)
+         
+
+     }
+    let id=  setTimeout(myFun,1000)
+
     }
 
+
+document.getElementById("verify").addEventListener("click",()=>{
+    document.getElementById("verify").innerText="Login Successful"
+    window.location.href="home.html"
+    
+})
     
  
-    document.getElementById("cross").addEventListener("click",()=>{
-    window.location.href="signup.html"
-   })
+   
+
+
 
 </script>
