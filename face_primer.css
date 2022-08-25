@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    background-color: rgb(248, 248, 248);
 }
 h4 {
     color: grey;
@@ -9,6 +10,7 @@ h4 {
 h2 {
     text-align: center;
 }
+/* slider section  */
 #fslider {
     width: 100%;
     position: relative;
@@ -44,37 +46,41 @@ h2 {
     margin-top: 50px;
     display: flex;
 }
-#fsidebar {
-    width: 20%;
-    height: 500px;
-    border: 1px solid green;
-}
 #fproducts {
     width: 70%;
-    margin: 0px 20px 0px 70px;
-    border: 1px solid black;
+    margin: 0px 20px 100px 50px;
+    /* border: 1px solid black; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 #fproducts > div {
-    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    background-color: white;
 }
 #fproducts > div > img {
     width: 70%;
     height: 200px;
     padding: 0px 30px 20px 30px;
+    background-color: white;
 }
 #fproducts > div > p:first-child {
     color: #FC2779;
+    background-color: white;
 }
 #fproducts > div > h4,h3,p {
     text-align: center;
+    background-color: white;
+}
+#fproducts > div > p {
+    font-size: 18px;
 }
 #fproducts > div > h4 {
     line-height: 20px;
     margin: 0px 0px 10px 0px;
     font-size: 20px;
+    padding: 0px 5px;
     font-weight: lighter;
 }
 #fproducts > div > button {
@@ -86,6 +92,24 @@ h2 {
     border: none;
     border-radius: 5px;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
+}
+#fproducts > div > button:hover {
+    transform: scale(1.1);
+}
+/* sidebar section  */
+#fsidebar {
+    width: 20%;
+    margin-left: 30px;
+}
+#fsidebar > select {
+    display: block;
+    margin: auto;
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
 }

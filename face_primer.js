@@ -26,7 +26,7 @@ buttons[1].addEventListener("click",function() {
 });
 
 
-facePrimer = [
+facePrimerArr = [
     {img1:"https://images-static.nykaa.com/media/catalog/product/f/a/face-primer.jpg",
     img2:"https://images-static.nykaa.com/media/catalog/product/8/9/8904245706623_01.jpg",
     img3:"https://images-static.nykaa.com/media/catalog/product/8/9/8904245706623_02.jpg",
@@ -212,6 +212,7 @@ facePrimer = [
     }
 ]
 let cartLS = JSON.parse(localStorage.getItem("facePrimer")) || [];
+let showDescription = JSON.parse(localStorage.getItem("showDesc")) || [];
 let container = document.querySelector("#fproducts");
 
 function appendData(data) {
@@ -247,30 +248,51 @@ function appendData(data) {
 
         div.addEventListener("click", function () {
             window.location.href = "./fpdesc.html";
-
+            showDescription.push(el);
+            localStorage.setItem("showDesc", JSON.stringify(showDescription));
         });
     });
 }
-appendData(facePrimer);
+appendData(facePrimerArr);
 
 // sorting part 
 let sort1 = document.querySelector("#fbyPrice");
 sort1.addEventListener("change", function () {
     if (sort1.value === "sby") {
-        appendData(facePrimer);
+        window.location.reload();
     }
     if (sort1.value === "htl") {
-        let highToLow = facePrimer.sort(function (a,b) {
+        let highToLow = facePrimerArr.sort(function (a,b) {
             if (a.price > b.price) return -1;
             if (a.price < b.price) return 1;
         });
         appendData(highToLow);
     }
     if (sort1.value === "lth") {
-        let lowToHigh = facePrimer.sort(function (a,b) {
+        let lowToHigh = facePrimerArr.sort(function (a,b) {
             if (a.price > b.price) return 1;
             if (a.price < b.price) return -1;
         });
         appendData(lowToHigh);
+    }
+});
+let sort2 = document.querySelector("#fbyRating");
+sort2.addEventListener("change", function () {
+    if (sort2.value === "sbr") {
+        window.location.reload();
+    }
+    if (sort2.value === "htlr") {
+        let highToLowRate = facePrimerArr.sort(function (a,b) {
+            if (a.price > b.price) return -1;
+            if (a.price < b.price) return 1;
+        });
+        appendData(highToLowRate);
+    }
+    if (sort2.value === "lthr") {
+        let lowToHighRate = facePrimerArr.sort(function (a,b) {
+            if (a.price > b.price) return 1;
+            if (a.price < b.price) return -1;
+        });
+        appendData(lowToHighRate);
     }
 });
