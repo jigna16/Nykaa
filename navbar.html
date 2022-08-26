@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Nykaa</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="navbar.css"/>
 </head>
 <body>
   
@@ -134,21 +134,31 @@
 
 <div class="search-container2">        
   <form>   
-    <input type="text2" placeholder="Search on Nykaa" name="search">
+    <input type="text2" placeholder="Search on Nykaa" name="search" >
   </form>
 </div>
 
 <div class="dropdown">
-  <button class="dropbtn"><a href="file:///C:/Users/ashutosh/Desktop/fw18_0733_nykaa-sign-up/fw18_0733%20nykaa-login/navbar.html"><i class="fa fa-user" style="font-size:24px"></i> Account</a> </button>
+  <button class="dropbtn"><i class="fa fa-user" style="font-size:24px"></i> Account
+  <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content">
+      <a href="#">Orders</a>
+      <a href="#">Profile</a>
+      <a href="#">Wallet</a>
+      <a href="#">Wishlist</a>
+      <a href="#">Logout</a>
+    </div>
   </div>
-  <div  class="pcart"><a href=""><i style="font-size:24px" class="fa">&#xf07a;</i></a></div>
+  <div  class="pcart" onclick="cart()"><a href=""><i style="font-size:24px" class="fa">&#xf07a;</i></a></div>
   </div>
 
 </div>
 
 <div>
-
+  
 </div>
 
+
 </body>
+<script src="navbar.js"></script>
 </html>

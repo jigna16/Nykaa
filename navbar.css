@@ -78,7 +78,7 @@ margin-left: 55%;
 .dropdown {
   margin-left: 85%;
   overflow: hidden;
-  margin-top: -60px;
+  margin-top: -40px;
  
 }
 
@@ -99,12 +99,43 @@ margin-left: 55%;
   font-weight: bold;
 }
 
-.dropdown .dropbtn >a{
-  text-decoration:none;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+  
 }
+
+.dropdown-content > a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+ font-weight: bold;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color:black;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color:black;
+  color:white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 .pcart{
   float: right;
-  margin-top: -70px;
+  margin-top: -55px;
   font-weight: bold;
 }
 
