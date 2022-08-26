@@ -7,28 +7,30 @@ body {
 }
 
 .topnav {
-  overflow: hidden;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+ top: 50px;
  width: 100%;
  height:60px;
  box-shadow: 0px 8px 16px 0px rgba(241, 103, 152, 0.2);
 }
 
+
 .logo{
-  float: left;
-  margin-bottom: 10px;
-  width: 10%;
-  height: 100px;
-  background-color:white;
-  color:pink;
+width: 10%;
+height: 50px;
+ justify-content: space-around;
+  background-color: white;
+  color: #fc2779;
 }
 
-
+.log >.logo:hover {
+  color:#fc2779;
+ background-color: white;
+    }
 
 .topnav a {
-  float: right;
+  float: left;
   display: block;
   color: black;
   text-align: center;
@@ -53,13 +55,13 @@ margin-left: 55%;
   margin-top: 8px;
   font-size: 17px;
   border: none;
-  width: 200%;
+  width: 180%;
   border: 2px solid gray;
   border-radius: 10px;
 }
 
 .topnav .search-container button {
-  float: right;
+  margin-left: 20%;
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
@@ -73,17 +75,14 @@ margin-left: 55%;
   background: black;
 }
 
-
-
 .dropdown {
-  float: right;
+  margin-left: 85%;
   overflow: hidden;
-margin-top: -50px;
-
+  margin-top: -40px;
+ 
 }
 
 .dropdown {
-  margin-right: 5%;
   overflow: hidden;
   font-weight: bold;
 }
@@ -97,6 +96,7 @@ margin-top: -50px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  font-weight: bold;
 }
 
 .dropdown-content {
@@ -117,6 +117,7 @@ margin-top: -50px;
   text-align: left;
  font-weight: bold;
 }
+
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color:black;
   color: white;
@@ -131,10 +132,27 @@ margin-top: -50px;
   display: block;
 }
 
+
+.pcart{
+  float: right;
+  margin-top: -55px;
+  font-weight: bold;
+}
+
+.pcart >a:hover {
+  color:#fc2779;
+ background-color: white;
+    }
+
 nav{
   overflow: hidden;
   background-color:palevioletred;
   height: 50px; 
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
 }
 
 nav {
@@ -143,6 +161,7 @@ nav {
   background-image: url(https://adn-static1.nykaa.com/media/wysiwyg/2021/common-strip.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  position: sticky;
 }
 
 .pheading {
@@ -160,12 +179,14 @@ nav {
 .pheading {
       position: relative;
       animation-name: example;
-      animation-duration: 3s;
-      animation-iteration-count: 5;
+      animation-duration: 2s;
+      animation-iteration-count: 100;
     }
     
  @keyframes example {
       0%   { left:0px; top:0px;}
+      25%   { left:0px; bottom:0px;}
+      55%   { left:0px; top:0px;}
       75%  { left:0px; top:200px;}
       100% {left:0px; top:0px;}
     }
@@ -179,7 +200,7 @@ font-weight: bold;
 justify-content:space-around;
 text-decoration: none;
 margin-left: 0%;
-
+position: sticky;
 }
 .a1{
  float: right;
@@ -213,29 +234,83 @@ font-weight: bold;
   color:#fc2779;
     }
 
+    #r_drop_part {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      padding:  20px;
+      margin-top: 8px;
+      float:left;
+      font-weight: bold;
+    }
+    .drop {
+      color: black;
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .indrop {
+      background-color:white;
+      text-align: left;
+      display: none;
+      position: absolute;
+      z-index: 1;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      border-radius: 0 0 3px 3px;
+      min-width: 250px;
+      white-space: nowrap;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      padding-right: 60px;
+      border-top: none;
+    }
+    .indrop ul {
+      margin-top: 10px;
+      font-size: 12px;
+      margin: none;
+      font-weight: bold;
+      float: none;
+    }
+    .indrop ul a:hover {
+      color: #fc2779;
+    }
+    .indrop ul:first-child {
+      margin-top: 20px;
+    }
+    .indrop ul a {
+      list-style: none;
+      text-decoration: none;
+      color: #8a8888;
+    }
+    .drop:hover {
+      color:#fc2779;
+    }
+    .drop:hover .indrop {
+      display: block;
+    }
+    .drop i {
+      width: 3px;
+      margin-left: 10px;
+    }
 
 
-  .a2{
-    float: left;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+    
+.a2{
+  margin-top: -50px;
+  float:left;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-  .a2 >a{
-    text-decoration: none;
-    text-decoration-line: none;
-  }
-  .a2 >a:hover {
-    color:#fc2779;
-   background-color: white;
-      }
-  .pcart{
-    float: right;
-    margin-top: -50px;
-    font-weight: bold;
-  }
-
-  .pcart >a:hover {
-    color:#fc2779;
-   background-color: white;
-      }
+.a2 >a{
+  text-decoration: none;
+  text-decoration-line: none;
+}
+.a2 >a:hover {
+  color:#fc2779;
+ background-color: white;
+    }
