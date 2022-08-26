@@ -1,12 +1,14 @@
+let box = document.querySelector("#fslider");
 let slider = document.querySelector("#fslider > img");
 
 let buttons = document.querySelectorAll("#fslider>button");
-let imgNum = 0;
+
 let imgArray = [
     "https://images-static.nykaa.com/uploads/fe975d47-3792-4599-978f-ee185ef9f114.jpg?tr=w-2400,cm-pad_resize",
     "https://images-static.nykaa.com/uploads/381bc88c-1637-49da-9004-eda6690cf3f1.jpg?tr=w-2400,cm-pad_resize",
     "https://images-static.nykaa.com/uploads/3c9e27f1-705d-4d5a-8ec3-c9c3c28dc9e3.jpg?tr=w-2400,cm-pad_resize"
 ]
+let imgNum = 0;
 buttons[0].addEventListener("click", function () {
     if(imgNum===0){
         imgNum = imgArray.length-1;
@@ -24,7 +26,25 @@ buttons[1].addEventListener("click",function() {
     }
     slider.src = imgArray[imgNum];
 });
+let id;
+function makeSlider() {
+    box.innerHTML = null;
+    
+    slider.src = imgArray[imgNum];
+    box.append(slider);
+    imgNum++;
 
+    id = setInterval( function () {
+        if (imgNum === imgArray.length) {
+            imgNum = 0;
+        }
+        slider.src = imgArray[imgNum];
+        box.append(slider);
+        imgNum++;
+    },2000);
+}
+makeSlider();
+// clearInterval(id);
 
 facePrimerArr = [
     {img1:"https://images-static.nykaa.com/media/catalog/product/f/a/face-primer.jpg",
@@ -234,7 +254,7 @@ function appendData(data) {
         price.innerText = `MRP: ₹ ${el.price}`;
 
         let rating = document.createElement("p");
-        rating.innerText = `Rating: ${el.rating} /5`;
+        rating.innerText = `Rating: ${el.rating} / 5`;
 
         let button = document.createElement("button");
         button.innerText = "Add to Bag";
