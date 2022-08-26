@@ -1,5 +1,6 @@
 let addToCart = JSON.parse(localStorage.getItem("facePrimer")) || [];
 let showDescription = JSON.parse(localStorage.getItem("showDesc")) || [];
+
 let container = document.querySelector("#fshow_product");
 
 function showDetails (data) {
