@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search nykaa products</title>
+    <style>
+        input {
+            display: block;
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>search nykaa products here</h1>
+
+    <input type="search" id="search" onkeypress="debounce(searchData,2000)" placeholder="search here">
+</body>
+</html>
+<script>
+    function searchData() {
+        let query = document.querySelector("#search").value;
+        if (query === "face primer"){
+            window.location.href = "./face_primer.html";
+        }
+        else if (query === "concealer"){
+            window.location.href = "./concealer.html";
+        }
+    }
+
+    let id;
+    function debounce (func,delay) {
+        if (id) {
+            clearTimeout(id);
+        }
+        id = setTimeout(function () {
+            func();
+        },delay)
+    }
+</script>
