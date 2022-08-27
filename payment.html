@@ -168,13 +168,13 @@
             cvv:document.querySelector("#cvv").value,
         }
         if(paymentObj.cardNumber.length!=16){
-            alert("Inavalid Card Number")
+            alert("Invalid Card Number")
         }else if(paymentObj.cardNumber==""||paymentObj.cvv==""){
            
-           alert("Please fill all the mandatory input")
+           alert("Please fill all the mandatory inputs")
         }else{
             
-            alert("Congratulation! Payment Successfull");
-            window.location.href="paymentDone.html"
+            
+            window.location.href="payment_successful.html"
         }}
 </script>
