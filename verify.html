@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verify</title>
+    <style>
+            #j_main{
+            width: 340px;
+            height: 620px;
+            /* border: 1px solid red; */
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 25px;
+            padding-top: 3px;
+            padding-bottom: 5px;
+        }
+
+        #j_login_first{
+            width: 300px;
+            /* border: 1px solid black; */
+            display: flex;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+
+        #j_login_first>div:first-child{
+            width: 20px;
+            /* border: 1px solid green; */
+        }
+
+        #j_login_first>div:last-child{
+            width: 180px;
+            /* border: 1px solid green; */
+            margin-left: 50px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        hr{
+            color: lightgray;
+        }
+
+        input{
+        
+            padding: 11px 13px 11px 13px;
+            width: 210px;
+            margin-left: 60px;
+            border:1px solid #fc2779;
+            
+        }
+
+        button{
+            padding: 11px 13px 11px 13px;
+            width: 210px;
+            margin-left: 70px;
+            margin-top: 200px;
+            background-color: #fc2779;
+            color: white;
+            border: 0;
+
+        }
+
+        #cross{
+            cursor: pointer;
+        }
+
+      
+
+    </style>
+
+</head>
+<body>
+    <div id="j_main">
+        <div id="j_login_first">
+            <div id="cross">✖</div>
+            <div>LOGIN / REGISTER</div>
+        </div>
+        <hr>
+        <input type="text" name="" id="phone"  placeholder="Enter Email ID or Phone Number">
+        <button id="submit">PROCEED</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    let jap=false
+    let arr=[]
+   let submit= document.getElementById("submit")
+   submit.addEventListener("click",()=>{
+    let phone=document.getElementById("phone").value
+    console.log(phone)
+    if(phone.length==10){
+        jap=true
+        arr.push(phone)
+        localStorage.setItem("number",JSON.stringify(arr))
+        window.location.href="success.html"
+    }else{
+        alert("Please enter valid phone number")
+        window.location.href="verify.html"
+
+    }
+   })
+
+
+   document.getElementById("cross").addEventListener("click",()=>{
+    window.location.href="signup.html"
+   })
+
+  
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <style>
+        #j_main{
+            width: 340px;
+            height: 620px;
+            /* border: 1px solid red; */
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 25px;
+            padding-top: 3px;
+            padding-bottom: 5px;
+        }
+
+        #j_main>div{
+            width: 320px;
+            /* border: 1px solid green; */
+            margin: auto;
+        }
+
+        hr{
+            color: lightgray;
+        }
+
+        #j_second>div>img{
+            width:300px;
+            height: 200px;
+            margin-right: 50px;
+        }
+
+        #j_third>h3{
+            background-color: palevioletred;
+            color: white;
+            width: 280px;
+            font-size:21px;
+            cursor: pointer;
+        }
+
+
+        #j_third>div:first-child{
+            margin-right: 50px;
+        }
+
+        #j_third>div>img{
+            width: 100px;
+            height: 30px;
+            /* border: 1px solid black; */
+        margin-left:100px ;
+        }
+
+       #j_adjust{
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid yellow; */
+        margin-top: 0px;
+
+       }
+
+       #j_main p{
+        line-height: 5px;
+        font-size: 15px;
+        font-size: 18px;
+       }
+
+       #x{
+        font-size: 50px;
+        margin-top: 50px;
+       }
+
+      
+    </style>
+</head>
+<body>
+    <div id="j_main">
+        <div id="j_firstbox">
+            <p id="x">✖</p>
+            <h1>Sign in</h1>
+            <p>To quickly find your favourites items,</p>
+            <p>saved address and payments.</p>
+            <hr>
+            <p>Register and earn 2000 reward points</p>
+
+    </div>
+
+    <div id="j_second">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaE4AM-OwUxfrkXlu0rfdcQqs265mBpCH42w&usqp=CAU" alt="gifts">
+        </div>
+    </div>
+
+    <div id="j_third">
+       <h3 id="j_click">Enter Phone Number or Email</h3>
+       <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RvudwGwrjmykijwifXHTcs0Trxn0qUrKEw&usqp=CAU" alt="google"></div>
+    </div>
+
+
+    <div id="j_last">
+        <p>By continuing, you agree that you have read</p>
+        <p> and accept</p>
+        <div id="j_adjust"> 
+            <div>our</div>
+            <div><a href="/">T&Cs</a></div>
+            <div>and</div>
+            <div><a href="/">Privacy Policy</a></div>
+        </div>
+    </div>
+  
+    
+</body>
+</html>
+<script>
+
+  
+    document.getElementById("j_click").addEventListener("click",()=>{
+        // console.log("hi")
+        window.location.href="verify.html"
+    })
+
+
+    document.getElementById("x").addEventListener("click",()=>{
+        window.location.href="index.html"
+
+
+    })
+
+
+</script>

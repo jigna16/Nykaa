@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading{
+            text-align: center;
+            color:#fc2779 ;
+        }
+
+        #j_main{
+            width: 100%;
+            height: 1000px;
+            /* border: 1px solid red; */
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(10,auto);
+            gap:20px
+        }
+
+        .box{
+            /* border: 5px solid green; */
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            padding: 5px;
+        }
+
+        img{
+            width: 300px;
+            height: 300px;
+            /* border: 1px solid blue; */
+        }
+
+        .remove{
+            background-color: #fc2779;
+            color: white;
+            border: 0;
+            padding: 10px 20px 10px 20px;
+        }
+
+        .price{
+            color: black;
+            margin-top: -5px;
+        }
+
+        .rating{
+            margin-top: -20px;
+        }
+
+
+        .proceed{
+            background-color: #fc2779;
+            color: white;
+            border: 0;
+            padding: 20px 30px 20px 30px;
+            margin-left: 200px;
+            font-weight: bold;
+            font-size: 15px;
+    
+        }
+
+
+        
+    
+      
+    </style>
+</head>
+<body>
+    <h1 id="heading">My Wishlist</h1>
+    <h2 id="total"> </h2>
+    <div id="j_main">
+
+ 
+    </div>
+  
+    
+</body>
+</html>
+<script>
+    let sum=0;
+    let data=JSON.parse(localStorage.getItem("facePrimer")) || []
+    console.log(data[0])
+    let container=document.getElementById("j_main")
+    data.forEach((elem,index)=>{
+        let box=document.createElement("div");
+        box.setAttribute("class","box")
+        let title=document.createElement("h4")
+        title.innerText=elem.name
+        let imgBox=document.createElement("div")
+        imgBox.setAttribute("class","box")
+        let img=document.createElement("img")
+        img.src=elem.img1
+        imgBox.append(img)
+        let price=document.createElement("h2")
+        price.setAttribute("class","price")
+        price.innerText=`Rs ${elem.price}`
+        let rating=document.createElement("h3")
+        rating.setAttribute("class","rating")
+        rating.innerText=`Rating:- ${elem.rating}`
+
+        let remove=document.createElement("button")
+        remove.innerText="Remove"
+        remove.setAttribute("class","remove")
+        remove.addEventListener("click",function(){
+            Remove(elem,index)
+        })
+
+        let proceed=document.createElement("button")
+        proceed.innerText="proceed to pay ➨"
+        proceed.setAttribute("class","proceed")
+        proceed.addEventListener("click",function(){
+            pro(elem,index)
+        })
+       
+
+
+        box.append(title,img,price,rating,remove,proceed)
+        // container.append(title,imgBox,price,rating,remove)
+        container.append(box)
+
+
+        
+    let total=document.getElementById("total")
+    total.innerText= `Total:- ${sum=sum+elem.price}`
+    console.log(total)
+
+        
+
+    })
+
+    let Remove=(elem,index)=>{
+        console.log(elem,index)
+        data.splice(index,1)
+        localStorage.setItem("facePrimer",JSON.stringify(data))
+        window.location.reload()
+    }
+
+let pay_arr=[]
+    let pro=(elem,index)=>{
+        console.log(elem)
+        pay_arr.push(elem)
+        console.log(pay_arr)
+        localStorage.setItem("pay",JSON.stringify(pay_arr))
+        window.location.href="address.html"
+      
+    }
+
+
+</script>

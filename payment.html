@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <style>
+        #j_main{
+            width: 50%;
+            margin: auto;
+            height: 320px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        h1{
+            text-align: center;
+            color: #fc2779;
+
+        }
+
+        #j_main>div:first-child{
+            width: 30%;
+            /* border: 2px solid green; */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            padding: 10px 10px 20px 10px;
+         
+        }
+
+        #j_main>div:last-child{
+            width: 60%;
+            /* border: 5px solid blue; */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            padding: 10px 10px 20px 10px;
+            
+            
+        }
+
+        #options>div{
+            width: 100%;
+            height: 40px;
+            border: 1px solid lightgrey;
+            font-size: large;
+            color: gray;
+        }
+
+        #card, #expiry{
+            width: 100%;
+            height: 40px;
+            border: 1px solid lightgray;
+            margin-bottom: 5px;
+        }
+
+        #submit{
+            width: 80%;
+            height: 40px;
+            background-color: #fc2779;
+            font-size: large;
+            border-radius: 30px;
+            border: 0;
+            margin-left: 40px;
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+        }
+
+
+        input,button,select,option{
+            height: 20px;
+        }
+
+
+        #payment{
+            width: 100px;
+            height: 28px;
+            background-color: #fc2779;
+            color: white;
+            border: 0;
+        }
+
+       
+
+
+     
+
+
+    </style>
+</head>
+<body>
+    <h1>CHOOSE PAYMENT METHOD</h1>
+    <div id="j_main">
+        <div id="options">
+            <div>Credit/Debit Card (Default)</div>
+            <div>UPI</div>
+            <div>Google Pay</div>
+            <div>Net Banking</div>
+            <div>Mobile Wallets</div>
+            <div>Cash on Delivery</div>
+            <div>Gift Card</div>
+        </div>
+        <div id="j_payment">
+            
+            
+            <!-- <input type="text" name="" id="card" placeholder="Card Number"></br>
+            <input type="date" name="" id="expiry" placeholder="Expiry"></br>
+            <input type="checkbox" name="" id="sold">
+            save this as per RBI guidelines</br>
+            <input type="text" name="" id="submit" placeholder="pay now"></br> -->
+
+
+
+            <div id="box2">
+                <form>
+                
+                    <h3>Card Number*</h3>
+                    <input type="number" id="cardNum">
+                    <h3>Expiration Date</h3>
+                    <select id="MonthName">
+                        <option value="">Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="Julay">July</option>
+                        <option value="Augest">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <select id="Year">
+                        <option value="">Year</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option> 
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                    </select>
+                    <h3>Card Verification Number*</h3>
+                    <input type="Number" placeholder="CVV" id="cvv">
+                    <input type="submit" value="Pay Now" id="payment">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+      document.querySelector("form").addEventListener("submit",myFunction)
+    function myFunction(){
+        event.preventDefault();
+        let paymentObj={
+            cardNumber:document.querySelector("#cardNum").value,
+            expirydate:document.querySelector("#MonthName").value,
+            expiryYear:document.querySelector("#Year").value,
+            cvv:document.querySelector("#cvv").value,
+        }
+        if(paymentObj.cardNumber.length!=16){
+            alert("Invalid Card Number")
+        }else if(paymentObj.cardNumber==""||paymentObj.cvv==""){
+           
+           alert("Please fill all the mandatory inputs")
+        }else{
+            
+            
+            window.location.href="payment_successful.html"
+        }}
+</script>

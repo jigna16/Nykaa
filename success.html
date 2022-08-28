@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>success</title>
+    <style> 
+          #j_main{
+        width: 340px;
+        height: 620px;
+        /* border: 1px solid red; */
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        margin: auto;
+        margin-top: 30px;
+        border-radius: 25px;
+        padding-top: 3px;
+        padding-bottom: 5px;
+         }
+    
+        #j_login_first{
+            width: 300px;
+            /* border: 1px solid black; */
+            display: flex;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+
+        #j_login_first>div:first-child{
+            width: 20px;
+            /* border: 1px solid green; */
+        }
+
+        #j_login_first>div:last-child{
+            width: 180px;
+            /* border: 1px solid green; */
+            margin-left: 50px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input{
+        
+        padding: 11px 13px 11px 13px;
+        width: 210px;
+        margin-left: 60px;
+        background-color: #f3f3f3;
+        
+    }
+
+    #j_para1{
+        width: 185px;
+        /* border: 1px solid green; */
+        margin: auto;
+        margin-bottom: 5px;
+        margin-top: 40px;
+
+    }
+
+    #j_para2{
+        width: 80px;
+        /* border: 1px solid blue; */
+        margin: auto;
+        margin-bottom: 5px;
+    }
+
+    #j_para3{
+        width: 240px;
+        /* border: 1px solid red; */
+        margin: auto;
+        margin-bottom: 5px;
+
+    }
+
+    #j_otp{
+        margin-top: 10px;
+        display: flex;
+    }
+
+    #otp{
+        width: 100px;
+        border: 1px solid green;
+    }
+
+    #submit{
+        background-color: #fc2779;
+        color: white;
+        border: 0;
+    }
+
+
+    #verify{
+        padding: 11px 13px 11px 13px;
+        width: 210px;
+        margin-left: 60px;
+        font-size: 40px;
+        /* border: 1px solid white; */
+        
+    }
+
+
+    #verifyBox{
+        margin-top: 30px;
+        padding: 11px 13px 11px 13px;
+        width: 210px;
+        margin-left: 60px;
+        background-color:  #f3f3f3;
+        /* cursor: pointer; */
+        
+
+    }
+
+
+    #verifyBox>div{
+        width: 70px;
+        /* border: 1px solid red; */
+        margin: auto;
+        font-size: large;
+        background-color: #f3f3f3;
+        color: white;
+    }
+
+    #j_last{
+        margin: auto;
+        color: lightgrey;
+        /* border: 1px solid red; */
+        width: 150px;
+        margin-top: 10px;
+        font-size: large;
+    }
+
+    #cross{
+            cursor: pointer;
+        }
+
+
+        #timer{
+            /* border: 1px solid red; */
+            width: 80px;
+            height: 30px;
+            margin-top: 25px;
+            margin-left: 200px;
+            font-size: large;
+          
+
+        }
+
+
+    </style>
+</head>
+<body onload="myFun()">
+    <div id="j_main">
+        <div id="j_login_first">
+            <div id="cross">✖</div>
+            <div>LOGIN / REGISTER</div>
+        </div>
+        <input id="input">
+        <div id="j_para1">Welcome back Nykaa user, Please enter the OTP sent on</div>
+        <div id="j_para2">your phone</div>
+        <div id="j_para3">(Be sure to check your spam folder)</div>
+
+        <div id="timer"> </div>
+        <div id="j_otp">
+            <input type="text" name="" id="otp" placeholder="Enter OTP">
+            <button id="submit">RESEND OTP</button>
+        </div>
+         <div id="verifyBox">
+            <div id="verify">VERIFY</div>
+         </div>
+
+         <div id="j_last">Login via Password</div>
+        
+
+
+
+    </div>
+    
+</body>
+</html>
+<script>
+  let arr=JSON.parse(localStorage.getItem("number"))
+    console.log(arr[0])
+
+    let input=document.getElementById("input")
+    input.value=arr[0]
+
+
+    document.getElementById("cross").addEventListener("click",()=>{
+    window.location.href="verify.html"
+   })
+
+ 
+
+    let id;
+    let c=30;
+
+    let myFun=()=>{
+    let  y=document.getElementById("otp").value
+
+     document.getElementById("timer").innerText=` 00: ${c} sec`
+     c--
+     console.log(y)
+     if(y.length=="6"){
+        document.getElementById("verifyBox").style.backgroundColor="#fc2779"
+         document.getElementById("verify").style.backgroundColor="#fc2779"
+         document.getElementById("verifyBox").style.cursor="pointer"
+
+         clearTimeout(id)
+         
+
+     }
+    let id=  setTimeout(myFun,1000)
+
+    }
+
+
+document.getElementById("verify").addEventListener("click",()=>{
+    document.getElementById("verify").innerText="Login Successful"
+    window.location.href="index.html"
+    
+})
+    
+ 
+   
+
+
+
+</script>

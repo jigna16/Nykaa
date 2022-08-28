@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #j_main{
+            display: flex;
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 1000px;
+            justify-content: space-between;
+
+        }
+
+        #j_main>div:first-child{
+            width: 30%;
+            /* border: 2px solid green; */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+         
+        }
+
+        #j_main>div:last-child{
+            width: 60%;
+            /* border: 5px solid blue; */
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            padding-left: 70px;
+        }
+
+        .box{
+            /* border: 5px solid green; */
+        
+            padding: 5px;
+            
+        }
+
+        img{
+            width: 380px;
+            height: 400px;
+
+             /* border: 1px solid blue;  */
+             
+        }
+
+        .price{
+            color: black;
+            margin-top: 5px;
+        }
+
+        .rating{
+            margin-top: 5px;
+        }
+
+        .imgbox{
+            /* border: 1px solid yellow; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+        }
+
+        #Country,#name,#phone,#pincode,#address{
+            width: 90%;
+            height: 100px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            font-size: 30px;
+        }
+
+        label{
+            font-size: larger;
+            color:white ;
+            background-color: #fc2779;
+            padding: 5px;
+            margin-top: 10px;
+           
+        }
+
+        #submit{
+        text-align: center;
+            margin-top: 20px;
+            width: 70%;
+            height: 70px;
+            background-color: #fc2779;
+            color: white;
+            font-size: 40px;
+            margin-left: 100px;
+            padding-bottom: 5px ;
+            border-radius: 40px;
+            border: 0;
+            
+        }
+
+        h1{
+            text-align: center;
+            color: #fc2779;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="j_main">
+        <div id="details">
+            <h1>Items in your bag</h1>
+        </div>
+        <div id="address_details">
+            <h1>Address Details</h1>
+
+            <input type="text" name="" id="Country" placeholder="Country"></br>
+            <label for="">Enter Your Name</label></br>
+            <input type="text" name="" id="name" placeholder="Name"></br>
+            <label for="">Enter Your Phone Number</label></br>
+            <input type="text" name="" id="phone" placeholder="Phone Number"></br>
+            <label for="">Enter Your Pincode</label></br>
+            <input type="text" name="" id="pincode" placeholder="Postal Code"></br>
+            <label for="">Enter Your Address</label></br>
+            <input type="text" name="" id="address" placeholder="Address"></br>
+            <input type="checkbox" id="sold"> Use this as my default Shipping Address</br>
+
+            <button id="submit" onclick="submit()">SHIP TO THIS ADDRESS</button>
+
+
+
+
+          
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    let parr=JSON.parse(localStorage.getItem("pay"))
+    let container=document.getElementById("details")
+    console.log(parr)
+
+    parr.forEach((elem,index)=>{
+
+        let box=document.createElement("div");
+        box.setAttribute("class","box")
+        let title=document.createElement("h2")
+        title.innerText=elem.name
+        let imgBox=document.createElement("div")
+        imgBox.setAttribute("class","imgbox")
+        let img=document.createElement("img")
+        img.src=elem.img1
+        imgBox.append(img)
+        let price=document.createElement("h2")
+        price.setAttribute("class","price")
+        price.innerText=`Rs ${elem.price}`
+        let rating=document.createElement("h3")
+        rating.setAttribute("class","rating")
+        rating.innerText=`Rating:- ${elem.rating}`
+
+        box.append(title,imgBox,price,rating)
+        // container.append(title,imgBox,price,rating,remove)
+        container.append(box)
+
+    })
+
+    let submit=()=>{
+        let country=document.getElementById("Country").value
+        let name=document.getElementById("name").value
+        let phone =document.getElementById("phone").value
+        let pincode=document.getElementById("pincode").value
+        let address=document.getElementById("address").value
+        let sold=document.getElementById("sold").checked
+
+        let x= new Address(country,name,phone,pincode,address,sold)
+        console.log(x)
+        window.location.href="payment.html"
+
+    }
+
+    class Address{
+        constructor(c,n,ph,pd,a,s){
+            this.country=c;
+            this.name=n;
+            this.phone=ph;
+            this.pincode=pd;
+            this.address=a
+            this.sold=s
+        }
+    }
+
+    
+
+
+
+
+</script>
