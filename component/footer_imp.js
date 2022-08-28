@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/footer.css">
-    <title>Document</title>
-</head>
-<body>
-
-  <div id="emailSendbtnSP">
+let footer_imp=()=>{
+    return `  <div id="emailSendbtnSP">
     <h3>Thank you for Subscribing</h3>
 </div>
     <div id="end">
@@ -152,30 +142,7 @@
 
        </div>
       </div>
-    </div>
-   
-
-</body>
-</html>
-<script>
-
-document.getElementById('submitmail').addEventListener('click',function (){
-//  hello();
-myTimeout = setTimeout(function(){
-  document.getElementById('emailSendbtnSP').style.visibility = 'hidden';
-}, 2000);
-event.preventDefault();
-
- document.getElementById('emailSendbtnSP').style.visibility = 'visible';
+    </div>`
 }
-)
 
-
-
-
-
-
-
-
-
-</script>
+export default footer_imp
