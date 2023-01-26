@@ -1,0 +1,117 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(248, 248, 248);
+}
+#fppath {
+    color: grey;
+    margin-top: 50px;
+}
+.finfo {
+    text-align: center;
+}
+/* slider section  */
+#fslider {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    /* border: 1px solid red; */
+    margin-bottom: 50px;
+}
+#fslider > img {
+    width: 100%;
+}
+#fslider > button {
+    position: absolute;
+    top: 40%;
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#fslider > button:nth-child(2) {
+    left: 1%;
+}
+#fslider > button:nth-child(3) {
+    right: 1%;
+}
+#fslider > button:hover {
+    background-color: rgba(77,77,77,0.8);
+}
+/* product_part stats */
+#fproduct_part {
+    margin-top: 50px;
+    display: flex;
+}
+#fproducts {
+    width: 70%;
+    margin: 0px 20px 100px 50px;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+#fproducts > div {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    background-color: white;
+}
+#fproducts > div > img {
+    width: 70%;
+    height: 200px;
+    padding: 0px 30px 20px 30px;
+    background-color: white;
+}
+#fproducts > div > p:first-child {
+    color: #FC2779;
+    background-color: white;
+}
+#fproducts > div > h4,h3,p {
+    text-align: center;
+    background-color: white;
+}
+#fproducts > div > p {
+    font-size: 18px;
+}
+#fproducts > div > h4 {
+    line-height: 20px;
+    margin: 0px 0px 10px 0px;
+    font-size: 20px;
+    padding: 0px 5px;
+    font-weight: lighter;
+}
+#fproducts > div > button {
+    display: block;
+    margin: auto;
+    padding: 15px 40px;
+    background-color: #FC2779;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+#fproducts > div > button:hover {
+    transform: scale(1.1);
+}
+/* sidebar section  */
+#fsidebar {
+    width: 20%;
+    margin-left: 30px;
+}
+#fsidebar > select {
+    display: block;
+    margin: auto;
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

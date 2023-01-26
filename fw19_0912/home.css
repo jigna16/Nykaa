@@ -1,0 +1,126 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&display=swap'); */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#SP~header{
+    width: 100%;
+    background-color: white;
+}
+#Container_SP{
+    /* border: 3px solid violet; */
+    position: relative;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    font-weight: 700;
+    height: 60px;
+    box-shadow: 5px 5px 5px #dfd7d7;
+    padding-top: 8px;
+}
+#Container_SP>.SP_logo{
+    width: 7%;
+    padding: 0px 0px 5px 0px;
+    /* height: 100%;  */
+    /* border: 3px solid rgb(130, 134, 238); */
+
+}
+#navbar_SP>ul{
+    display: flex;
+}
+#navbar_SP>ul>li{
+    padding: 0px 15px ;
+    list-style: none;
+    cursor: pointer;
+    /* font-family: sans-serif; */
+}
+#navbar_SP>ul>li>a{
+    color: gray;
+    text-decoration: none;
+}
+#navbar_SP>ul>li>a:hover{
+color: #fc2779;
+}
+.Mega_Menu_SP{
+    /* border: 2px solid red; */
+    position: absolute;
+    /* margin-top: 0%; */
+    top: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    left: 0%;
+    display: flex;
+    padding: 0px 0px 5px 0px;
+    /* box-shadow: 2px 2px 2px 2px whitesmoke; */
+    /* margin-top: -20px; */
+
+}
+nav>ul>li:hover>.Mega_Menu_SP{
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+.megamenuitemsp{
+    padding: 0px 10px;
+    flex-basis: 15%;
+}
+.megamenuitemsp>ul>li{
+    color: rgba(3, 2, 26, 0.6);
+    list-style: none;
+    padding: 4px;
+    font-weight: 500;
+
+   
+}
+.megamenuitemsp>ul>li:hover{
+    color: #fc2779;
+}
+.megamenuitemsp>p{
+    /* font-weight: bold; */
+    font-weight: 600;
+    color:rgba(3, 2, 26, 0.6);
+    margin-top: 10px;
+    padding: 2px;
+}
+.megamenuitemsp2{
+    padding: 0px 10px;
+    flex-basis: 15%;
+    background-color: rgb(243, 241, 241);
+}
+.megamenuitemsp2>ul>li{
+    color: rgba(3, 2, 26, 0.6);
+    list-style: none;
+    padding: 2px;
+    font-weight: 500;
+   
+}
+.megamenuitemsp2>ul>li:hover{
+    color: #fc2779;
+}
+.megamenuitemsp2>p{
+    
+    font-weight: 600;
+    color:rgba(3, 2, 26, 0.6);
+    margin-top: 10px;
+    padding: 2px;
+}
+.megamenuitemsp>p:hover{
+    color: #fc2779;
+}
+.megamenuitemsp2>p:hover{
+    color: #fc2779;
+}
+.SP_btnofr{
+background-color: #fc2779;
+color: white;
+/* align-items: center; */
+text-align: center;
+border-radius: 5px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+cursor: pointer;
+/* font-family: inheri */
+/* font-family: 'Baloo Bhai 2', cursive; */
+}
